@@ -1,0 +1,34 @@
+<div class="bar-container">
+  <div class="text-center content">
+    <h2>Maximum temperature</h2>
+    <button (click)="toggleCelsius()" [ngClass]="{ activeTab: isCelsius }">
+      Celsius
+    </button>
+    <button (click)="toggleCelsius()" [ngClass]="{ activeTab: !isCelsius }">
+      Fahrenheit
+    </button>
+    <figure id="bar"></figure>
+  </div>
+</div>
+<div class="table-container">
+  <table>
+    <thead class="row">
+      <th class="col-2">Date</th>
+      <th class="col-2">Sunrise</th>
+      <th class="col-2">Sunset</th>
+      <th class="col-2">Moon rise</th>
+      <th class="col-2">Avg. tempC</th>
+      <th class="col-2">Avg. tempF</th>
+    </thead>
+    <tbody>
+      <tr class="row" *ngFor="let day of weather_data">
+        <td class="col-2">{{ day.date }}</td>
+        <td class="col-2">{{ day.astronomy[0].sunrise }}</td>
+        <td class="col-2">{{ day.astronomy[0].sunset }}</td>
+        <td class="col-2">{{ day.astronomy[0].moonrise }}</td>
+        <td class="col-2">{{ day.avgtempC }}</td>
+        <td class="col-2">{{ day.avgtempF }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

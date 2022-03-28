@@ -1,0 +1,102 @@
+@import "../../../assets/styling/colors.scss";
+
+$smallScreen: 400px;
+
+.city-details {
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0;
+/*****************************
+Current City Details Container
+******************************/
+  .info {
+    height: 440px;
+    @media screen and (max-width: $smallScreen) {
+      height: auto;
+    }
+    text-align: center;
+  /***************
+  Main Information
+  ****************/
+    .date {
+      color: $white_color;
+      font-weight: 900;
+      font-size: 30px;
+      @media screen and (max-width: $smallScreen) {
+        font-size: 24px;
+      }
+    }
+    .location {
+      font-size: 25px;
+      @media screen and (max-width: $smallScreen) {
+        font-size: 19px;
+      }
+      color: $white_color;
+      margin: 0;
+      img {
+        width: 25px;
+        height: 25px;
+        color: #fff;
+      }
+    }
+    .temperature {
+      font-size: 40px;
+      @media screen and (max-width: $smallScreen) {
+        font-size: 24px;
+      }
+      color: $white_color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 30px 0;
+      .img {
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        margin-right: 5px;
+      }
+    }
+    .state {
+      font-size: 22px;
+      color: $white_color;
+      margin: 0;
+    }
+    .btns {
+      margin-top: 70px;
+      .btn {
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-size: 18px;
+        color: $dark_navy_blue;
+        font-weight: 600;
+        background-color: $white_color;
+        outline: none;
+        border: none;
+        @media screen and (max-width: 400px) {
+          padding: 5px 10px;
+          font-size: 15px;
+        }
+      }
+    }
+
+/***************
+List Information
+***************/
+    ul {
+      padding: 0;
+      li {
+        color: $white_color;
+        list-style: none;
+        margin: auto;
+        font-size: 23px;
+        padding: 15px 0 15px 26px;
+        @media screen and (max-width: $smallScreen) {
+          font-size: 16px;
+        }
+        border-bottom: 1px solid rgb(160, 158, 158);
+        text-align: start;
+      }
+    }
+  }
+}

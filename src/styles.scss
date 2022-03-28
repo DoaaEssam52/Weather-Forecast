@@ -1,0 +1,52 @@
+@import "../src/assets/styling/colors";
+@import "~font-awesome/css/font-awesome.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+
+/*******
+  Font
+*******/
+@font-face {
+  font-family: cairo;
+  src: url("../../weather-forecast/src/assets/Fonts/Cairo/static/Cairo-Regular.ttf");
+}
+* {
+  font-family: cairo;
+}
+
+/****************************
+Temp in celsius or fahrenheit
+****************************/
+.temp {
+  position: relative;
+  padding: 0 5px;
+  &:after {
+    position: absolute;
+    content: "";
+    right: -2px;
+    top: 3%;
+    width: 5px;
+    height: 5px;
+    border: 2px solid $white_color;
+    border-radius: 50%;
+  }
+}
+
+/*********************************
+Weather information main container
+**********************************/
+.weather-container {
+  padding: 20px 0;
+  margin: 10px 0;
+  border: 2px solid $white_color;
+  border-radius: 10px;
+  background-color: $light_navy_blue;
+  opacity: 0.75;
+}
+
+/**************
+Body Background
+**************/
+body {
+  background: url("assets/images/weather.webp");
+  background-size: cover;
+}

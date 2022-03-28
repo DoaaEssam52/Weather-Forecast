@@ -1,0 +1,37 @@
+ <div class=" row  city-details ">
+  <div class="col-10 col-sm-7 col-md-5 col-xl-3 info weather-container">
+    <h3 class="date">Today</h3>
+    <h5 class="location">
+      <img src="../../../assets/images/location.svg" /> {{ city }},{{ country }}
+    </h5>
+    <div class="temperature">
+      <img
+        class="img"
+        [src]="imgUrl"
+      />
+      <span *ngIf="isCelsius; else notCelsius" >
+        <span class="temp">{{ temp_C }}</span> C
+      </span>
+      <ng-template #notCelsius>      
+        <span class="temp">{{ temp_F }}</span> F
+    </ng-template>
+    </div>
+    <h5 class="state">{{ state }}</h5>
+    <div class="btns">
+      <button class="btn" (click)="toggleCelsius()">{{!isCelsius?"celsius":"Fahrenheit"}}</button>
+    </div>
+  </div>
+  <div class="col-10 col-sm-7 col-md-5 col-xl-3 info weather-container">
+    <ul>
+      <li>
+        Feels Like: <span class="temp">{{ feelsLikeC }}</span> C /
+        <span class="temp">{{ feelsLikeF }}</span> F
+      </li>
+      <li>Wind Speed: {{windSpeed}} mph</li>
+      <li>Visibility Miles: {{ visibilityMiles }} miles</li>
+      <li>Pressure: {{pressure}}</li>
+      <li>Humidity: {{ humidity }} %</li>
+      <li>UV Index: {{ uvIndex }}</li>
+    </ul>
+  </div>
+ </div>

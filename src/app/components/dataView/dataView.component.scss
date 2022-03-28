@@ -1,0 +1,75 @@
+@import "../../../assets/styling/colors.scss";
+
+/**********
+CHART VIEW
+**********/
+.bar-container {
+  text-align: center;
+  margin: 50px auto 0;
+  display: flex;
+  justify-content: center;
+  .content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 50px;
+    @media screen and (max-width: 600px) {
+      padding: 20px 10px;
+      width: 100%;
+    }
+    h2 {
+      font-weight: 700;
+      color: $light_blue;
+      margin-bottom: 20px;
+    }
+    button {
+      border: none;
+      background-color: transparent;
+      color: grey;
+      font-size: 20px;
+      cursor: pointer;
+      font-weight: 700;
+      margin: 0 10px;
+      text-decoration: to-upper-case($string: "");
+    }
+    .activeTab {
+      color: $dark_navy_blue;
+      padding-bottom: 3px;
+      border-bottom: 4px solid $dark_navy_blue;
+    }
+  }
+}
+
+/**********
+TABLE VIEW
+**********/
+.table-container {
+  padding: 0 40px;
+  margin-bottom: 40px;
+  table {
+    width: 100%;
+    text-align: center;
+    th {
+      background-color: $light_blue;
+      padding: 10px 0;
+      color: $dark_navy_blue;
+      font-size: 20px;
+      @media screen and (max-width: 600px) {
+        font-size: 16px;
+      }
+      font-weight: 800;
+    }
+    tr {
+      background-color: $white_color;
+      td {
+        border: 2px solid $dark_navy_blue;
+        padding: 20px 0;
+        color: $dark_navy_blue;
+        font-size: 16px;
+        @media screen and (max-width: 600px) {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}

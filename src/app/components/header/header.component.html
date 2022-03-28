@@ -1,0 +1,38 @@
+<div class="header">
+  <div *ngIf="showCities == true; else hideCities" class="header-with-dropdown">
+    <p class="title">Weather</p>
+    <div class="other-cities">
+      <p (click)="toggleSideBar()" class="title">
+        <img
+          [src]="
+            showSideBar
+              ? '../../../assets/images/close.svg'
+              : '../../../assets/images/bars.svg'
+          "
+        />
+        Other cities
+      </p>
+    </div>
+  </div>
+  <ul [ngClass]="{ dropdown: true, dropdown_show: showSideBar }">
+    <li>
+      <input
+        name="current_city"
+        [(ngModel)]="current_city"
+        (ngModelChange)="modelChangeFn($event)"
+        placeholder="Search by city name ..."
+      />
+    </li>
+    <div class="cities">
+      <li *ngFor="let city of filteredCities" (click)="getDashboardCity(city)">
+        {{ city.name.replace(" Governorate", "") }}
+      </li>
+    </div>
+  </ul>
+  <ng-template #hideCities>
+    <div class="header-without-dropdown">
+      <p class="title">Weather Forecast</p>
+      <p (click)="backToLanding()" class="title">Home</p>
+    </div>
+  </ng-template>
+</div>
